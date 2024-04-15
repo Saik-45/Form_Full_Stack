@@ -1,0 +1,21 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" formControlName="username">
+    <div *ngIf="form.get('username').errors?.required && form.get('username').touched">
+      Username is required.
+    </div>
+    <div *ngIf="form.get('username').errors?.minlength && form.get('username').touched">
+      Username must be at least 3 characters long.
+    </div>
+  </div>
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>
+
+<div class="popup" [class.show]="showSuccessPopup">
+  Saved successfully!
+</div>
+
+<div *ngIf="form.errors?.serverError">
+  An error occurred while saving the user. Please try again later.
+</div>
