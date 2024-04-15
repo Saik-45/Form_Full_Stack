@@ -1,0 +1,13 @@
+// registration-form.component.html
+<mat-card>
+    <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput [(ngModel)]="user.username" name="username" required #username="ngModel">
+        <mat-error *ngIf="username.invalid && username.touched">Username is mandatory</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.form.valid">Submit</button>
+      <button mat-button type="reset" (click)="resetForm()">Reset</button>
+    </form>
+  </mat-card>
+  

@@ -1,0 +1,21 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  height: 100vh; 
+}
+.appname{
+  align-items: center;
+}
+  
+  .container h1 {
+    color: blue;
+  }
+  
+  .appname h1 {
+    color: aqua;
+  }
+  
+  
